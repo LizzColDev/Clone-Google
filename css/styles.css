@@ -1,21 +1,29 @@
-* {
-    box-sizing: border-box;
-    
-}
-
-body {
-    margin: 0;
+*{
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: Arial, sans-serif;
+    max-width: 1024px;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    align-content: space-between;
+    grid-template-rows: auto 10fr auto;
 }
 
 a {
     text-decoration: none;
+}
+a:hover {
+    text-decoration:underline;
     cursor: pointer;
 }
-html {
-    font-size: 62.5%;
-    font-family: Arial, Helvetica, sans-serif;
-}
+
 
 header {
     width: 100%;
@@ -26,45 +34,66 @@ header {
 header nav {
     display: flex;
     justify-content: flex-end;
+    padding: 6px;
 }
 
 header nav .nav_right_section {
-    width: 250px;
-    height: auto;
+    height: 48px;
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav_right_section li {
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    list-style: none;
+    margin: 12px;
 }
-
+ul .g-mail {
+    margin-right: 4px;
+}
 .nav_right_section a {
-    
-    margin-right: 10px;
     color: #000000;
+    line-height: 24px;
 }
 
-.menu_icon {
-    background-image: url("https://static.thenounproject.com/png/756729-200.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 25px;
-    height: 25px;
+ul .menu_icon {
+    margin-right: 2px;
+    margin-left: 8px;
+    width: 36px;
+    height: 36px;
+}
+
+.menu_icon a, .user-icon img{
+    display: flex;
+}
+.menu_icon:hover {
+    background-color: rgba(60,64,67,.08);
+    border-radius: 50%;
+}
+
+.menu_icon img {
+    height: 23px;
+    filter: contrast(0.2);
 }
 .nav_right_section img {
     border-radius: 50%;
-    margin-left: 10px;
+    width: auto;
 }
 
 main {
-    margin-top: 150px;
-    text-align: center;
+    width: 100%;
+    margin-bottom: auto;
+    margin-top: 58px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
 }
 
 .main_logo {
-    width: 530px;
-    margin: 0 auto;
-    margin-bottom: 35px;
+    margin: 11.5px auto 24px;
 }
 
 .main_logo img {
@@ -73,18 +102,21 @@ main {
 }
 
 .main_input {
-    width: 530px;
-    margin: 0 auto;
-    margin-bottom: 35px;
+    margin-bottom: 29px;
+    margin:  0 auto 29px;
+    max-width: 584px;
 }
 
 .main_input_container {
-    width: 525px;
-    border-radius: 100px;
-    border: 1px solid rgb(223 225 229);
+    height: 46px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+
 }
 
 .main_input input {
@@ -99,27 +131,22 @@ main {
     border-color: #dfe1e500;
 }
 
-.search_icon {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/945px-Vector_search_icon.svg.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 18px;
-    height: 18px;
+.search_icon img{
+    height: 16px;
+    margin: 0 14px;
 }
-
-.micro_icon {
-    background-image: url("https://freepngimg.com/thumb/microphone/70666-voice-microphone-google-search-logo-png-file-hd.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 18px;
-    height: 18px;
+.image-search img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin: 0 16px 0 16px;
+}
+.micro_icon img {
+    height: 20px;
     cursor: pointer;
 }
 
 .main_bottons {
-    width: 530px;
     margin: 0 auto;
 }
 
@@ -142,28 +169,53 @@ main {
     border: 1px solid #dadce0;
     color: #202124;
     box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    cursor: pointer;
 }
 
 footer {
     width: 100%;
-    height: 50px;
-    position: absolute;
-    bottom: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding:0;
+    margin: 0;
     align-items: center;
-    font-size: 13px;
+    height: 189px;
+}
+
+footer .contain-country {
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 24.7%;
+    /* ESTE PADDING ESTABA EN EL PÁRRAFO */
+    padding: 15px 30px; 
+    color: #70757a;
+    font-size: 1.5rem;
+}
+
+footer .contain-ul {
+    width: 100%;
+    height: 75.3%;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 1.4rem;
     background-color: #f2f2f2;
     border-top: 1px solid #dadce0;
 }
 
 footer ul {
-    margin: 10px;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     padding-left: 0;
 }
 
+footer ul li {
+        padding: 15px;
+}
 .footer_left {
     justify-self: left;
 }
@@ -172,7 +224,47 @@ footer ul {
     justify-self: right;
 }
 
-footer ul li a {
-    margin: 10px;
-    color: #5f6368;
+footer .contain-ul li a {
+    color: #70757a;
+}
+
+
+@media screen and (min-width:540px) {
+    body {
+        overflow: hidden;
+    }
+    footer {
+        height: 142px;
+}
+
+footer .contain-country {
+    height: 34%;
+}
+
+footer .contain-ul {
+    height: 66%;
+}
+
+}
+
+@media screen and (min-width:855px) {
+    body {
+        overflow: hidden;
+    }
+    footer {
+        height: 95.4px;
+    }
+    footer .contain-country {
+        height: 51%;
+    }
+    
+    footer .contain-ul {
+        height: 49%;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    footer .contain-ul {
+        justify-content: space-between;
+    }
 }
